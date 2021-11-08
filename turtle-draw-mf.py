@@ -62,13 +62,10 @@ turtle.setposition(60,-160)
 style = ('Arial', 10, 'italic')
 turtle.write('Total distance marked = 6366.453212556878 ',font=style, align='center')
 
-turtle.done()
-turtleDrawTextfile.close()
-
 # Todo: Wait for the user to press the enter key before closing. 
 #turtle.listen()
 #turtle.onkeypress()
-def exitprogram():
+def exitTurtle():
     window.bye()
 
 def close():
@@ -78,14 +75,17 @@ def close():
     close.penup()
     close.hideturtle()
     close.goto(0,0)
-    close.write("Press ESC again to exit", align="center", font = ("Courier", 24, "normal"))
+    close.write("Press Return again to exit", align="center", font = ("Courier", 10, "normal"))
     window.listen()
-    window.onkeypress(exitprogram, "Escape")
+    window.onkeypress(exitTurtle, "Return")
 
 window = turtle.Screen()
 window.listen()
-window.onkeypress(close, "Escape")
+window.onkeypress(close, "Return")
 window.mainloop()
+
+turtle.done()
+turtleDrawTextfile.close()
 
 print('\nEnd')
 
